@@ -1,0 +1,13 @@
+<img src="<%= @anime.img_url %>" height="250" >
+<h2><%= @anime.title %></h2><br>
+
+<h4>Description:</h4><br>
+<h6><%= @anime.description %></h6><br>
+<h4>Community Score:</h4> <%= @anime.score %><br>
+
+<h4>Genre:</h4><br>
+<% @response.body["genres"].each do |genre| %>
+	
+	<%= genre['name'] %><br>
+
+	<% end %>
