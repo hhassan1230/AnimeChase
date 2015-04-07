@@ -1,7 +1,9 @@
 completed:
 -----------------------------------------------------------------------------------------
-created rake task to seed database.
-deploy to heroku
+created rake task to seed database with genres and animes.
+deployed to heroku
+listed out genres on index page.
+listed out animes on genre show page.
 
 
 
@@ -9,12 +11,18 @@ core features:
 ---
 index of animes through list of genres
 user account for saved list of animes to watch
+add pic to genre page.
+add back button to top of each page.
+show page for anime, make it hyperlink.
+
 
 
 
 optional if we have time:
 ---
+google image gem to add images to show page.
 bootstrap styling to app
+-put genres into columns on index page
 background image
 link anime videos to anime show page
 

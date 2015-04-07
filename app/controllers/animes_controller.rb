@@ -48,7 +48,9 @@ get_anime(@search_input)
 
   def animes_in_genre
     @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    @message = "No animes in this genre."
     render "animes_in_genre"
+
 
   end
 end
