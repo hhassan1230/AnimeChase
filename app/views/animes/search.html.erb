@@ -1,15 +1,20 @@
 
-<div id="content">
-
-<%= form_for @anime do |f| %>
-
-  <div class="field">
-    <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
-    <%= @error if @error %>
+<!-- SIGN IN LINK -->
+<!-- <img src= "http://naugher.net/sites/default/files/styles/large/public/field/image/facebook_login4.png"> -->
+  <div>
+    <body>
+     <%= link_to "Sign in with Facebook"%>
+     <!-- , "/auth/facebook"  -->
   </div>
+    <div id="content">
+      <%= form_for @anime do |f| %>
+        <div class="field">
+          <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
+          <%= @error if @error %>
 
-<% end %>
+    <% end %>
 
+  </body>
 </div>
 
 

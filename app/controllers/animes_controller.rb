@@ -1,5 +1,6 @@
 require 'uri'
 
+
 class AnimesController < ApplicationController
 
 	def index
