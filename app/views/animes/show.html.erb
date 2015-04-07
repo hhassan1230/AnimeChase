@@ -5,9 +5,10 @@
 <h6><%= @anime.description %></h6><br>
 <h4>Community Score:</h4> <%= @anime.score %><br>
 
-<h4>Genre:</h4><br>
+<h4>Genre:</h4>
 <% @response.body["genres"].each do |genre| %>
 	
-	<%= genre['name'] %><br>
+  <% genre = Genre.all.find_by(:name => genre['name']) %>
+<%= link_to genre.name, "/genres/#{genre.name}" %>  </br>
 
 	<% end %>
