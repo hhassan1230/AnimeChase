@@ -5,6 +5,7 @@ class CreateAnimes < ActiveRecord::Migration
       t.text :description
       t.string :img_url
       t.integer :score
+      t.string :slug
 
       t.timestamps null: false
     end

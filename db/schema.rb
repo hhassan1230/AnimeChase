@@ -11,24 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406165638) do
+ActiveRecord::Schema.define(version: 20150407141656) do
 
   create_table "animes", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "img_url"
     t.integer  "score"
+    t.string   "slug"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "genres", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "anime"
+  create_table "genre_animes", force: :cascade do |t|
+    t.integer  "genre_id"
+    t.integer  "anime_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "genres", ["anime"], name: "index_genres_on_anime"
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
