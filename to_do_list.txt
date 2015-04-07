@@ -1,6 +1,7 @@
 completed:
 -----------------------------------------------------------------------------------------
 created rake task to seed database.
+deploy to heroku
 
 
 
@@ -8,7 +9,6 @@ core features:
 ---
 index of animes through list of genres
 user account for saved list of animes to watch
-deploy to heroku
 
 
 
@@ -16,7 +16,7 @@ optional if we have time:
 ---
 bootstrap styling to app
 background image
-comments
+link anime videos to anime show page
 
 
 
@@ -24,4 +24,4 @@ comments
 super non-critical:
 ---
 post to facebook with gem
-link anime videos to anime show page
+comments

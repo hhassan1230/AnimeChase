@@ -1,0 +1,6 @@
+<% @animes_in_genre.each do |anime| %>
+  <%= link_to anime.title, "/anime/#{anime.slug}"  %></br>
+  <%= anime.description %></br></br>
+
+
+<% end %>

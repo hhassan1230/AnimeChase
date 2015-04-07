@@ -12,5 +12,9 @@
 
 </div>
 
+<% Genre.all.each do |genre| %>
+  <%= link_to genre.name, "/genres/#{genre.name}" %></br>
+<% end %>
+
 
 
