@@ -1,7 +1,13 @@
-hello!!! this is search page
 
+<div id="content">
 
 <%= form_for @anime do |f| %>
-  <%= f.text_field :title, :placeholder => 'Enter in a title'%><br />
-  <%= f.submit 'Search Animes' %>
+
+  <div class="field">
+  <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%>
+  </div>
+
 <% end %>
+
+</div>
+
