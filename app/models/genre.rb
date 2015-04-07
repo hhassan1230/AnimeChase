@@ -1,3 +1,4 @@
 class Genre < ActiveRecord::Base
-  belongs_to :anime
+  has_many :genre_animes
+  has_many :animes, through: :genre_animes
 end
