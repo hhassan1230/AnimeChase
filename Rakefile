@@ -7,7 +7,7 @@ Rails.application.load_tasks
 
 
 require 'rake'
-namespace :defaultuser do
+namespace :seed do
 
   task :populate_genres => :environment do
     Genre.destroy_all

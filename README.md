@@ -21,6 +21,10 @@ Bullet point some of the key features of your app here.
 
 How do users use your app?
 
+rake seed:populate_genres
+rake seed:populate_db
+
+
 ## Development/Contribution
 
 Explain how people can contribute to your app. How should they write tests?
