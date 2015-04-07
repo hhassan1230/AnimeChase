@@ -11,11 +11,7 @@ class AnimesController < ApplicationController
 
 	def create
   	@search_input = params["anime"]["title"].gsub(" ", "-").downcase
-		@response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{@search_input}",
-    headers:{
-      "X-Mashape-Key" => ENV["HUMM_API_KEY"],
-      "Accept" => "application/json"
-    }
+get_anime(@search_input)
 
 
 	  if @response.headers[:status] == "200 OK"
@@ -39,4 +35,12 @@ class AnimesController < ApplicationController
 		
 	end
 
+
+  def get_anime(search_input)
+        @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
+      headers:{
+        "X-Mashape-Key" => ENV["HUMM_API_KEY"],
+        "Accept" => "application/json"
+      }
+  end
 end
