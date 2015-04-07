@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+  
   resources:animes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  # get "/auth/:provider" 
   # You can have the root of your site routed with "root"
    root :to => 'animes#search'
+
+   #this catches the provider's callback and sends us to the sessions
+   #controller, create method
+
+
+
+   # match "/auth/:provider/callback", :to => 'sessions#create'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
