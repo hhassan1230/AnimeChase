@@ -4,7 +4,8 @@
 <%= form_for @anime do |f| %>
 
   <div class="field">
-  <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%>
+    <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
+    <%= @error if @error %>
   </div>
 
 <% end %>
@@ -12,4 +13,4 @@
 </div>
 
 
-<%= @error if @error %>
+
