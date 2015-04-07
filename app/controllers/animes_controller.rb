@@ -24,7 +24,7 @@ get_anime(@search_input)
 
     else
     @anime = Anime.new
-    @error = "No results found, try again."
+    @error = "No results found for \"#{params["anime"]["title"]}\"."
     render "search"
 
 	  end
