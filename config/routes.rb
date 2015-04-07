@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
 
 
-   # match "/auth/:provider/callback", :to => 'sessions#create'
+   get "/auth/facebook/callback", :to => 'sessions#create'
+   get "/signout", :to => 'sessions#destroy'
 
 
   # Example of regular route:

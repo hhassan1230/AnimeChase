@@ -4,8 +4,18 @@
 <!-- <img src= "http://naugher.net/sites/default/files/styles/large/public/field/image/facebook_login4.png"> -->
   <div>
     <body>
-     <%= link_to "Sign in with Facebook"%>
-     <!-- , "/auth/facebook"  -->
+    <div> 
+    <%= "You are signed in as #{current_user.name}" if current_user%>
+    <%= "You are not signed in." if !current_user%>
+    </br>
+    
+     <% if current_user %>
+        <%= link_to "Sign out", "/signout" %>
+     <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook"%>
+     <% end %>
+
+     </div>
   </div>
     <div id="content">
       <%= form_for @anime do |f| %>
