@@ -13,16 +13,20 @@ show page for anime, make genres hyperlink.
 
 core features:
 ---
-user account for saved list of animes to watch
+can save anime to watch list when logged in.
+hide watch list when user is not logged in.
+nav-bar: sign in and sign out. when signed in, first name and pic is displayed.
+
 
 
 
 optional if we have time:
 ---
+trailers - https://rubygems.org/search?utf8=%E2%9C%93&query=youtube
 change score to float type, create a top ten list
 google image gem to add images to show page.
 bootstrap styling to app
--put genres into columns on index page
+  put genres into columns on index page
 background image
 link anime videos to anime show page
 nav-bar random button
