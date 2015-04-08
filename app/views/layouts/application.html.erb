@@ -40,7 +40,7 @@
 
 <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Watch List</a></li>
+        <li><%= link_to "Watch List", "/watchlist" %></li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%="#{current_user.first_name} " %><img src="<%= current_user.user_img_url%>" height="25"><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
