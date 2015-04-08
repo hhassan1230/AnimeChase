@@ -53,9 +53,9 @@ get_anime(@search_input)
   end
 
   def add_to_watch_list
-    anime = Anime.find_by(:title => params['save_this_anime'])
-    SavedAnime.create(:anime_id => anime.id, :user_id => current_user.id)
-
-    binding.pry
+    @anime = Anime.find_by(:title => params['save_this_anime'])
+    SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
+    get_anime(@anime.slug)
+    render :show
   end
 end

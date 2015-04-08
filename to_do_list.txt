@@ -10,22 +10,29 @@ add pic to genre page.
 oauth working with facebook
 show page for anime, make genres hyperlink.
 nav-bar: sign in and sign out. when signed in, first name and pic is displayed.
+random button functional
 
 core features:
 ---
 can save anime to watch list when logged in.
-  join table containing user id and anime id.
+  done - join table containing user id and anime id.
+  done - on show page - link/button to add to watch list
+  done - if there is no current user then do not display 'add to save list'
+  
   user has many animes. watch list button is functional
-  on show page - link/button to add to watch list
-  on genre page - option to add to watch list
-  if there is no current user then do not display 'add to save list'
-random button functional
+  delete from watch list. delete all option as well. 
+
+
+
+
 trailers - https://rubygems.org/search?utf8=%E2%9C%93&query=youtube
 
 
 
 optional if we have time:
 ---
+delete all option - reset watch list. 
+on genre page - option to add to watch list
 change score to float type, create a top ten list
 google image gem to add images to show page.
 bootstrap styling to app
