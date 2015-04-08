@@ -17,8 +17,6 @@ namespace :seed do
   end
 
   task :populate_db => :environment do
-
-      binding.pry
     (1..100).each do |i|
       response = get_anime(i)
 

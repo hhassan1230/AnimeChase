@@ -1,10 +1,10 @@
 
+
 <!-- SIGN IN LINK -->
 <!-- <img src= "http://naugher.net/sites/default/files/styles/large/public/field/image/facebook_login4.png"> -->
   <div>
     <body>
-     <%= link_to "Sign in with Facebook"%>
-     <!-- , "/auth/facebook"  -->
+
   </div>
     <div id="content">
       <%= form_for @anime do |f| %>
@@ -14,6 +14,10 @@
     <% end %>
   </body>
 </div>
+
+<% Genre.all.each do |genre| %>
+  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %></br>
+<% end %>
 
 
 

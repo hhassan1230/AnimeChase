@@ -11,7 +11,8 @@ class AnimesController < ApplicationController
 	end
 
 	def create
-  	@search_input = params["anime"]["title"].gsub(" ", "-").downcase
+    search_string = (params["anime"]["title"] || params["anime"])
+  	@search_input = search_string.gsub(" ", "-").downcase
 get_anime(@search_input)
 
 
@@ -20,8 +21,7 @@ get_anime(@search_input)
 				description: @response.body["synopsis"], 
 				score: @response.body["community_rating"],
 				img_url: @response.body["cover_image"])
-			#build genres here
-			render "show"
+			  render "show"
 
     else
     @anime = Anime.new
@@ -32,16 +32,39 @@ get_anime(@search_input)
 
 	end
 
+	def random
+		@anime = Anime.discover
+		render "show"
+	end
+
 	def show
 		
 	end
 
 
   def get_anime(search_input)
-        @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
-      headers:{
-        "X-Mashape-Key" => ENV["HUMM_API_KEY"],
-        "Accept" => "application/json"
-      }
+    @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
+    headers:{
+      "X-Mashape-Key" => ENV["HUMM_API_KEY"],
+      "Accept" => "application/json"
+    }
+  end
+
+  def animes_in_genre
+    @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    @message = "No animes in this genre."
+    render "animes_in_genre"
+  end
+
+  def add_to_watch_list
+    @anime = Anime.find_by(:title => params['save_this_anime'])
+    SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
+    # get_anime(@anime.slug)
+    render :show
+  end
+
+  def watchlist
+    @animes = current_user.animes
+    render :watchlist
   end
 end
