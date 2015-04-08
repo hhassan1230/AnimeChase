@@ -11,7 +11,8 @@ class AnimesController < ApplicationController
 	end
 
 	def create
-  	@search_input = params["anime"]["title"].gsub(" ", "-").downcase
+    search_string = (params["anime"]["title"] || params["anime"])
+  	@search_input = search_string.gsub(" ", "-").downcase
 get_anime(@search_input)
 
 
@@ -43,5 +44,14 @@ get_anime(@search_input)
         "X-Mashape-Key" => ENV["HUMM_API_KEY"],
         "Accept" => "application/json"
       }
+  end
+
+
+  def animes_in_genre
+    @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    @message = "No animes in this genre."
+    render "animes_in_genre"
+
+
   end
 end
