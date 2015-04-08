@@ -1,11 +1,13 @@
 class Anime < ActiveRecord::Base
 	has_many :genre_animes
   has_many :genres, through: :genre_animes
+
+  has_many :saved_animes
+  has_many :users, through: :saved_animes
 	# validates :title, presence: true
 
 	def self.discover
-		amount_in_db = self.all.count  
-		self.all[rand(0..amount_in_db)]
+    self.all.sample
 	end
 	
 end

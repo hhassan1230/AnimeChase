@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :saved_animes
+  has_many :animes, through: :saved_animes
+
 
 	def self.from_omniauth(auth)
 		# binding.pry

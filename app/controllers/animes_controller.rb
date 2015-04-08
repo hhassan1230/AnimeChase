@@ -55,7 +55,12 @@ get_anime(@search_input)
     @animes_in_genre = Genre.find_by('name' => params['genre']).animes
     @message = "No animes in this genre."
     render "animes_in_genre"
+  end
 
-
+  def add_to_watch_list
+    @anime = Anime.find_by(:title => params['save_this_anime'])
+    SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
+    get_anime(@anime.slug)
+    render :show
   end
 end

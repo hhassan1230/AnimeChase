@@ -1,6 +1,16 @@
 <img src="<%= @anime.img_url %>" height="250" >
 <h2><%= @anime.title %></h2><br>
 
+<% if current_user %>
+  <% if !(current_user.animes.include? Anime.find_by(:title => @anime.title)) %>
+    <%= link_to 'Add to Watch List', "/add_to_watch_list/#{@anime.title}" %>
+  <% else %>
+    <%= "Already in your Watch List" %>
+  <% end %>
+<% else %>
+   <%= link_to "Login to add to Watch List", "/auth/facebook"%>
+ <% end %>
+
 <h4>Description:</h4><br>
 <h6><%= @anime.description %></h6><br>
 <h4>Community Score:</h4> <%= @anime.score %><br>
