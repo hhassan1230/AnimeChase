@@ -29,7 +29,7 @@
 </div>
 
 <% Genre.all.each do |genre| %>
-  <%= link_to genre.name, "/genres/#{genre.name}" %></br>
+  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %></br>
 <% end %>
 
 
