@@ -21,8 +21,7 @@ get_anime(@search_input)
 				description: @response.body["synopsis"], 
 				score: @response.body["community_rating"],
 				img_url: @response.body["cover_image"])
-			#build genres here
-			render "show"
+			  render "show"
 
     else
     @anime = Anime.new
@@ -44,11 +43,11 @@ get_anime(@search_input)
 
 
   def get_anime(search_input)
-        @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
-      headers:{
-        "X-Mashape-Key" => ENV["HUMM_API_KEY"],
-        "Accept" => "application/json"
-      }
+    @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
+    headers:{
+      "X-Mashape-Key" => ENV["HUMM_API_KEY"],
+      "Accept" => "application/json"
+    }
   end
 
   def animes_in_genre
@@ -60,7 +59,7 @@ get_anime(@search_input)
   def add_to_watch_list
     @anime = Anime.find_by(:title => params['save_this_anime'])
     SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
-    get_anime(@anime.slug)
+    # get_anime(@anime.slug)
     render :show
   end
 

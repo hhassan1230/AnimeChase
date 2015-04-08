@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 
 
 	def self.from_omniauth(auth)
-		# binding.pry
 		user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])|| create_from_omniauth(auth)
 		user
 	end
@@ -18,9 +17,6 @@ class User < ActiveRecord::Base
 		user.email = auth["info"]["email"]
 		user.user_img_url = auth["info"]["image"]
 		end
-		# binding.pry
 	end
-
-
 
 end
