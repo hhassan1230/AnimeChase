@@ -21,6 +21,8 @@ can save anime to watch list when logged in.
   
   user has many animes. watch list button is functional
   delete from watch list. delete all option as well. 
+fix show page and associated controller so that it retrieves data from db instead of constantly doing api calls.
+
 
 
 

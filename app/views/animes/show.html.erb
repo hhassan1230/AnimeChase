@@ -16,9 +16,18 @@
 <h4>Community Score:</h4> <%= @anime.score %><br>
 
 <h4>Genre:</h4>
-<% @response.body["genres"].each do |genre| %>
+<% if @response %>
+		<% @response.body["genres"].each do |genre| %>
 	
-  <% genre = Genre.all.find_by(:name => genre['name']) %>
-<%= link_to genre.name, "/genres/#{genre.name}" %>  </br>
+  	<% genre = Genre.all.find_by(:name => genre['name']) %>
+		<%= link_to genre.name, "/genres/#{genre.name}" %>  </br>
 
 	<% end %>
+<% else %>
+
+
+		<% @anime.genres.each do |genre| %>
+
+		<%= link_to genre.name, "/genres/#{genre.name}" %>  </br>
+	<% end %>
+<% end %>

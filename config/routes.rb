@@ -8,7 +8,11 @@ Rails.application.routes.draw do
    root :to => 'animes#search'
    get 'genres/:genre' => 'animes#animes_in_genre'
    get '/anime/:anime' => 'animes#create'
+
    get '/add_to_watch_list/:save_this_anime' => 'animes#add_to_watch_list'
+
+   get '/random' => 'animes#random'
+
 
 
 
