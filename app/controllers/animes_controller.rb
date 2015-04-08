@@ -63,4 +63,9 @@ get_anime(@search_input)
     get_anime(@anime.slug)
     render :show
   end
+
+  def watchlist
+    @animes = current_user.animes
+    render :watchlist
+  end
 end
