@@ -1,15 +1,31 @@
 
-<div id="content">
 
-<%= form_for @anime do |f| %>
+<!-- SIGN IN LINK -->
+<!-- <img src= "http://naugher.net/sites/default/files/styles/large/public/field/image/facebook_login4.png"> -->
+  <div>
+    <body>
+    <div> 
+    <%= "You are signed in as #{current_user.name}" if current_user%>
+    <%= "You are not signed in." if !current_user%>
+    </br>
+    
+     <% if current_user %>
+        <%= link_to "Sign out", "/signout" %>
+     <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook"%>
+     <% end %>
 
-  <div class="field">
-    <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
-    <%= @error if @error %>
+     </div>
   </div>
+    <div id="content">
+      <%= form_for @anime do |f| %>
+        <div class="field">
+          <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
+          <%= @error if @error %>
 
-<% end %>
+    <% end %>
 
+  </body>
 </div>
 
 <% Genre.all.each do |genre| %>

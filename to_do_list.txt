@@ -5,16 +5,15 @@ deployed to heroku
 listed out genres on index page.
 listed out animes on genre show page.
 index of animes through list of genres
-add home button to nav-bar
+added home button to nav-bar
 add pic to genre page.
-
+oauth working with facebook
+show page for anime, make genres hyperlink.
 
 
 core features:
 ---
 user account for saved list of animes to watch
-show page for anime, make genres hyperlink.
-
 
 
 

@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
+  
   resources:animes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  # get "/auth/:provider" 
   # You can have the root of your site routed with "root"
    root :to => 'animes#search'
    get 'genres/:genre' => 'animes#animes_in_genre'
    get '/anime/:anime' => 'animes#create'
 
 
+
+
+   #this catches the provider's callback and sends us to the sessions
+   #controller, create method
+
+
+
+   get "/auth/facebook/callback", :to => 'sessions#create'
+   get "/signout", :to => 'sessions#destroy'
 
 
   # Example of regular route:
