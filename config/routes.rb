@@ -8,6 +8,7 @@ Rails.application.routes.draw do
    root :to => 'animes#search'
    get 'genres/:genre' => 'animes#animes_in_genre'
    get '/anime/:anime' => 'animes#create'
+   get '/random' => 'animes#random'
 
 
 

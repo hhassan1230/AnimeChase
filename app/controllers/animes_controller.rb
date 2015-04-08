@@ -33,6 +33,11 @@ get_anime(@search_input)
 
 	end
 
+	def random
+		@anime = Anime.discover
+		render "show"
+	end
+
 	def show
 		
 	end
