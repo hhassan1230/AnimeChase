@@ -5,7 +5,6 @@ class AnimesController < ApplicationController
 	def index
 	end
 
-
 	def search
 		@anime = Anime.new
 	end
@@ -20,20 +19,14 @@ class AnimesController < ApplicationController
 				description: @response.body["synopsis"], 
 				score: @response.body["community_rating"],
 				img_url: @response.body["cover_image"])
-
       @video_ids = get_youtube_ids(@anime)
-      
+			render "show"
 
-
-
-			  render "show"
     else
-    @anime = Anime.new
-    @error = "No results found for \"#{params["anime"]["title"]}\"."
-    render "search"
-
+      @anime = Anime.new
+      @error = "No results found for \"#{params["anime"]["title"]}\"."
+      render "search"
 	  end
-
 	end
 
 	def random
@@ -43,7 +36,7 @@ class AnimesController < ApplicationController
 	end
 
 	def show
-		
+	
 	end
 
 
@@ -57,6 +50,15 @@ class AnimesController < ApplicationController
 
   def animes_in_genre
     @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    # @animes_in_genre.order("genre").page(params[:page])
+    # @animes_in_genre.page(params[:page]).order("genre")
+    # @animes_in_genre.order("name").page(params[:page])
+
+    # Kaminari.paginate_array(@animes_in_genre).page(params[:page]).per(10)
+    # @f = Genre.find_by('name' => params['genre'])
+    # @f.order(:created_at).page(params[:page])
+    @genres = Genre.order(:created_at).page(params[:page]).per(2)
+    @genre = params["genre"]
     @message = "No animes in this genre."
     render "animes_in_genre"
   end
@@ -81,10 +83,8 @@ class AnimesController < ApplicationController
     redirect_to "/watchlist"
   end
 
-
-
   def get_youtube_ids(anime)
-        @video_ids = []
+      @video_ids = []
       list = YoutubeSearch.search("anime #{anime.title}")
       list[0..5].each do |listing|
         @video_ids << listing['video_id']
@@ -92,5 +92,4 @@ class AnimesController < ApplicationController
       return @video_ids
   end
     
-
 end

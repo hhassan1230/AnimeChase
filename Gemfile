@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'youtube_search'
+gem 'kaminari'
+gem "activeadmin", git: "https://github.com/gregbell/active_admin"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'unirest'

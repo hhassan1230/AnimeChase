@@ -8,6 +8,10 @@
 
 
 </br></br>
+
+
+
+<%= @genre if !@animes_in_genre.empty? %>
 <%= @message if @animes_in_genre.empty? %>
 <% @animes_in_genre.each do |anime| %>
 <div class='animelist'>
@@ -17,3 +21,7 @@
   </div>
 
 <% end %>
+<%= paginate @genres %>
+
+
+
