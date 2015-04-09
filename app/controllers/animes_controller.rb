@@ -65,4 +65,11 @@ class AnimesController < ApplicationController
     @animes = current_user.animes
     render :watchlist
   end
+
+  def destroy
+    @saved_anime_deleted = SavedAnime.find_by(:anime_id => params["id"])
+    @saved_anime_deleted.destroy
+    redirect_to "/watchlist"
+  end
+
 end
