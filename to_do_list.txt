@@ -11,6 +11,8 @@ oauth working with facebook
 show page for anime, make genres hyperlink.
 nav-bar: sign in and sign out. when signed in, first name and pic is displayed.
 random button functional
+link anime videos to anime show page
+put genres into columns on index page
 
 core features:
 ---
@@ -32,14 +34,10 @@ fix show page and associated controller so that it retrieves data from db instea
 optional if we have time:
 ---
 delete all option - reset watch list. 
-on genre page - option to add to watch list
 change score to float type, create a top ten list
-google image gem to add images to show page.
 bootstrap styling to app
-  put genres into columns on index page
 background image
-link anime videos to anime show page
-
+top 100 animes by score. # will probably not be accurate
 
 
 
