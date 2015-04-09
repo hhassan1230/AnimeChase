@@ -1,22 +1,62 @@
+</br>
+</br>
+</br>
+</br>
 
 
-<!-- SIGN IN LINK -->
-<!-- <img src= "http://naugher.net/sites/default/files/styles/large/public/field/image/facebook_login4.png"> -->
+
+
+
   <div>
-    <body>
+
 
   </div>
     <div id="content">
       <%= form_for @anime do |f| %>
         <div class="field">
-          <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%></br>
+          <%= f.text_field :title, :placeholder => 'Enter in a title', :size => 60%>
+          </br>
           <%= @error if @error %>
     <% end %>
   </body>
+
 </div>
 
-<% Genre.all.each do |genre| %>
-  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %></br>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+</br>
+</br>
+</br>
+</br>
+
+
+</br>
+</br>
+</br>
+</br>
+
+
+</br>
+</br>
+
+
+
+
+<% Genre.all.in_groups_of(15) do |arr| %>
+  <% arr.compact.each do |genre| %>
+  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %>
+<% end %>
+</br>
 <% end %>
 
 

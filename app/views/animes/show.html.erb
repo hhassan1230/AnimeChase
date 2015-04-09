@@ -1,5 +1,8 @@
+</br></br></br></br>
+
 <img src="<%= @anime.img_url %>" height="250" >
 <h2><%= @anime.title %></h2><br>
+
 
 <% if current_user %>
   <% if !(current_user.animes.include? Anime.find_by(:title => @anime.title)) %>
