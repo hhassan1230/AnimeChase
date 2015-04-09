@@ -1,10 +1,10 @@
 require 'uri'
 
-
 class AnimesController < ApplicationController
 
 	def index
 	end
+
 
 	def search
 		@anime = Anime.new
@@ -21,6 +21,12 @@ get_anime(@search_input)
 				description: @response.body["synopsis"], 
 				score: @response.body["community_rating"],
 				img_url: @response.body["cover_image"])
+
+      @video_ids = get_youtube_ids(@anime)
+      
+
+
+
 			  render "show"
 
     else
@@ -34,6 +40,7 @@ get_anime(@search_input)
 
 	def random
 		@anime = Anime.discover
+    @video_ids = get_youtube_ids(@anime)
 		render "show"
 	end
 
@@ -60,6 +67,7 @@ get_anime(@search_input)
     @anime = Anime.find_by(:title => params['save_this_anime'])
     SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
     # get_anime(@anime.slug)
+    @video_ids = get_youtube_ids(@anime)
     render :show
   end
 
@@ -67,4 +75,15 @@ get_anime(@search_input)
     @animes = current_user.animes
     render :watchlist
   end
+
+
+  def get_youtube_ids(anime)
+        @video_ids = []
+      list = YoutubeSearch.search("anime #{anime.title}")
+      list[0..5].each do |listing|
+        @video_ids << listing['video_id']
+      end
+      return @video_ids
+  end
+    
 end
