@@ -40,7 +40,7 @@ class AnimesController < ApplicationController
 		@anime = Anime.discover
     @anime.genres.each do |genre| 
       if genre.name == "Hentai"
-        @anime = Anime.discover
+        random
       end
     end
     @video_ids = get_youtube_ids(@anime)
