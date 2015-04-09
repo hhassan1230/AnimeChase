@@ -18,17 +18,15 @@
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
  */
+@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap.min";
 /* Some Style from the Bootstrap Default Theme */
 
 /*
  *= require rails_bootstrap_forms
  */
 
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-}
 
 .theme-dropdown .dropdown-menu {
   position: static;
@@ -46,6 +44,8 @@ body {
     padding: 20px;
     border: 2px solid #000000;
     background: #f5f5f5;
+      margin-left: 1.3cm;
+  margin-right: 2cm;
 }
 
 #content {
@@ -56,3 +56,27 @@ body {
     top:50%;
     margin:-100px 0 0 -150px;
 }
+
+#animelist {
+
+    padding:70px; 
+}
+
+.animelist {
+
+    padding: 40px;
+    overflow: hidden;
+}
+
+.animelist img {
+    margin-right: 15px;
+    float: left;
+}
+
+#fix_margin {
+  margin-left: 3.5cm;
+  margin-right: 2cm;
+
+}
+
+

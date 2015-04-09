@@ -13,7 +13,7 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
-
+<div>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,10 +33,6 @@
         <li class="active"><a href="/">Anime chase <span class="sr-only">(current)</span></a></li>
         <li><a href="/random">Discover</a></li>
       </ul>
-
-
-
-
 
 <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
@@ -65,6 +61,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+</div>
 
 <%= yield %>
 

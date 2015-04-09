@@ -1,9 +1,19 @@
+</br>
+</br>
 
+</br>
+
+</br>
+
+
+
+</br></br>
 <%= @message if @animes_in_genre.empty? %>
-
 <% @animes_in_genre.each do |anime| %>
-  <img src="<%= anime.img_url %>" height="250" >
-  <%= link_to anime.title, "/anime/#{anime.slug}"  %></br>
-  <%= anime.description %></br></br>
+<div class='animelist'>
+  <img src="<%= anime.img_url %>" height="250" ></br>
+  <%= link_to anime.title, "/anime/#{anime.slug}"  %></br></br>
+  <%= anime.description %>
+  </div>
 
 <% end %>

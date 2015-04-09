@@ -43,6 +43,7 @@ group :development, :test do
 end
 
 group :test, :development do
+  gem 'youtube_search'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -63,4 +64,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass'
