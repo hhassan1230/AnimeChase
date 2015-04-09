@@ -23,6 +23,8 @@ can save anime to watch list when logged in.
   done - delete from watch list. 
 	done - nav-bar random button
   
+
+
 fix show page and associated controller so that it retrieves data from db instead of constantly doing api calls.
 
 

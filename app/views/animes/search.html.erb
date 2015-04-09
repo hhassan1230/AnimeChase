@@ -51,15 +51,30 @@
 
 
 
+<div class="container">
+	<div class="row">
+  
+      	<div class="table-responsive">
+        <table class="table table-striped table-hover">
 
-<% Genre.all.in_groups_of(15) do |arr| %>
+          <tbody>
+
+<% Genre.all.in_groups_of(5) do |arr| %>
+ 
+  <tr> 
   <% arr.compact.each do |genre| %>
-  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %>
+    <td> <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %>
+</td>
+  <% end %>
+  </tr>
 <% end %>
-</br>
-<% end %>
 
 
 
 
-
+          </tbody>
+        </table>
+      </div>
+      
+	</div>
+</div>
