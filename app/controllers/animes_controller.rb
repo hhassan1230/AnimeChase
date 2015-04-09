@@ -53,7 +53,6 @@ class AnimesController < ApplicationController
       "X-Mashape-Key" => ENV["HUMM_API_KEY"],
       "Accept" => "application/json"
     }
-    binding.pry
   end
 
   def animes_in_genre
