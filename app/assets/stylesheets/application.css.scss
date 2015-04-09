@@ -28,16 +28,6 @@
  */
 
 
-.navbar {min-height:1px !important}
-
-
-
-
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-}
-
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
@@ -54,6 +44,8 @@ body {
     padding: 20px;
     border: 2px solid #000000;
     background: #f5f5f5;
+      margin-left: 1.3cm;
+  margin-right: 2cm;
 }
 
 #content {
@@ -72,7 +64,6 @@ body {
 
 .animelist {
 
-/*    border: 4px solid red;*/
     padding: 40px;
     overflow: hidden;
 }
