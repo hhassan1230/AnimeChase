@@ -36,16 +36,14 @@ namespace :seed do
         end
       end
     end
-
-
   end
 end
 
 
-    def get_anime(search_input)
-        @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
-      headers:{
-        "X-Mashape-Key" => ENV["HUMM_API_KEY"],
-        "Accept" => "application/json"
-      }
-    end
+  def get_anime(search_input)
+    @response = Unirest.get "https://hummingbirdv1.p.mashape.com/anime/#{search_input}",
+    headers:{
+      "X-Mashape-Key" => ENV["HUMM_API_KEY"],
+      "Accept" => "application/json"
+    }
+  end

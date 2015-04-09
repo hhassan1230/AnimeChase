@@ -1,15 +1,18 @@
 </br></br></br></br>
 </br></br>
 
+
 <%= "You have no animes saved" if @animes.empty? %>
+
 
 <% @animes.uniq.each do |anime| %>
   <div class='animelist'>
     <img src="<%= anime.img_url %>" height="250" ></br>
     <%= link_to anime.title, "/anime/#{anime.slug}"  %></br></br>
-  <%= anime.description %>
+  <%= anime.description %><br><br>
+<%= button_to "Delete", :method => :delete, id: anime.id %>
 </div>
-
 <% end %>
+ 
 
 

@@ -13,8 +13,7 @@ class AnimesController < ApplicationController
 	def create
     search_string = (params["anime"]["title"] || params["anime"])
   	@search_input = search_string.gsub(" ", "-").downcase
-get_anime(@search_input)
-
+    get_anime(@search_input)
 
 	  if @response.headers[:status] == "200 OK"
 			@anime = Anime.create(title: @response.body["title"], 
@@ -28,7 +27,6 @@ get_anime(@search_input)
 
 
 			  render "show"
-
     else
     @anime = Anime.new
     @error = "No results found for \"#{params["anime"]["title"]}\"."
@@ -77,6 +75,14 @@ get_anime(@search_input)
   end
 
 
+  def destroy
+    @saved_anime_deleted = SavedAnime.find_by(:anime_id => params["id"])
+    @saved_anime_deleted.destroy
+    redirect_to "/watchlist"
+  end
+
+
+
   def get_youtube_ids(anime)
         @video_ids = []
       list = YoutubeSearch.search("anime #{anime.title}")
@@ -86,4 +92,5 @@ get_anime(@search_input)
       return @video_ids
   end
     
+
 end
