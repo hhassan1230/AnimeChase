@@ -30,14 +30,14 @@ class AnimesController < ApplicationController
 	end
 
 	def random
-		@anime = Anime.discover
-    binding.pry
-    @anime.genres.each do |genre| 
-    if genre.name == "Hentai"
-      @anime = Anime.discover
-    end
-    @video_ids = get_youtube_ids(@anime)
+		@anime = Anime.discover 
 
+    # @anime.genres.each do |genre| 
+    #   if genre.name == "Hentai"
+    #     @anime = Anime.discover
+    #   end
+    # end
+    @video_ids = get_youtube_ids(@anime)
 		render "show"
 	end
 
@@ -63,7 +63,7 @@ class AnimesController < ApplicationController
     # Kaminari.paginate_array(@animes_in_genre).page(params[:page]).per(10)
     # @f = Genre.find_by('name' => params['genre'])
     # @f.order(:created_at).page(params[:page])
-    @genres = Genre.order(:created_at).page(params[:page]).per(2)
+    # @genres = Genre.order(:created_at).page(params[:page]).per(2)
     @genre = params["genre"]
     @message = "No animes in this genre."
     render "animes_in_genre"
@@ -90,12 +90,12 @@ class AnimesController < ApplicationController
   end
 
   def get_youtube_ids(anime)
-      @video_ids = []
-      list = YoutubeSearch.search("anime #{anime.title}")
-      list[0..5].each do |listing|
-        @video_ids << listing['video_id']
-      end
-      return @video_ids
+    @video_ids = []
+    list = YoutubeSearch.search("anime #{anime.title}")
+    list[0..5].each do |listing|
+      @video_ids << listing['video_id']
+    end
+    return @video_ids
   end
     
 end
