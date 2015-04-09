@@ -18,11 +18,12 @@ can save anime to watch list when logged in.
   done - join table containing user id and anime id.
   done - on show page - link/button to add to watch list
   done - if there is no current user then do not display 'add to save list'
-  
+	done - trailers - https://rubygems.org/search?utf8=%E2%9C%93&query=youtube
   done - user has many animes. watch list button is functional
-  delete from watch list. 
+  done - delete from watch list. 
+	done - nav-bar random button
+  
 fix show page and associated controller so that it retrieves data from db instead of constantly doing api calls.
-trailers - https://rubygems.org/search?utf8=%E2%9C%93&query=youtube
 
 
 
@@ -36,7 +37,6 @@ bootstrap styling to app
   put genres into columns on index page
 background image
 link anime videos to anime show page
-nav-bar random button
 
 
 
