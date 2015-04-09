@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'youtube_search'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'unirest'

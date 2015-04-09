@@ -12,14 +12,8 @@ Rails.application.routes.draw do
    get '/random' => 'animes#random'
    get '/watchlist' => 'animes#watchlist'
 
-
-
-
-
    #this catches the provider's callback and sends us to the sessions
    #controller, create method
-
-
 
    get "/auth/facebook/callback", :to => 'sessions#create'
    get "/signout", :to => 'sessions#destroy'

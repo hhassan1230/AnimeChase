@@ -13,8 +13,7 @@ class AnimesController < ApplicationController
 	def create
     search_string = (params["anime"]["title"] || params["anime"])
   	@search_input = search_string.gsub(" ", "-").downcase
-get_anime(@search_input)
-
+    get_anime(@search_input)
 
 	  if @response.headers[:status] == "200 OK"
 			@anime = Anime.create(title: @response.body["title"], 
@@ -22,7 +21,6 @@ get_anime(@search_input)
 				score: @response.body["community_rating"],
 				img_url: @response.body["cover_image"])
 			  render "show"
-
     else
     @anime = Anime.new
     @error = "No results found for \"#{params["anime"]["title"]}\"."
