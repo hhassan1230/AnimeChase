@@ -44,6 +44,7 @@ group :development, :test do
 end
 
 group :test, :development do
+  gem 'youtube_search'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'
