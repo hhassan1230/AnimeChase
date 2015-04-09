@@ -38,10 +38,10 @@ class AnimesController < ApplicationController
 
 	def random
 		@anime = Anime.discover
-    binding.pry
     @anime.genres.each do |genre| 
-    if genre.name == "Hentai"
-      @anime = Anime.discover
+      if genre.name == "Hentai"
+        @anime = Anime.discover
+      end
     end
     @video_ids = get_youtube_ids(@anime)
 
