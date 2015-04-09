@@ -52,9 +52,9 @@
 
 
 
-<% Genre.all.in_groups_of(15) do |arr| %>
+<% Genre.all.in_groups_of(5) do |arr| %>
   <% arr.compact.each do |genre| %>
-  <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %>
+    <%= link_to genre.name, "/genres/#{genre.name}" %><%= " [#{genre.animes.count.to_s}]" %>
 <% end %>
 </br>
 <% end %>
