@@ -14,11 +14,14 @@ random button functional
 link anime videos to anime show page
 put genres into columns on index page
 pagination
+top 100 to dropdown box on nav-bar
+
 
 
 todo
 ---
 background - opacity
+
 
 core features:
 ---
