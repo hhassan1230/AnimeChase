@@ -1,10 +1,12 @@
 require 'uri'
 
+#TODO:
+#Rating SCORE IS NOT ROUNDING TO TWO DECIMAL PLACES!!!!
+
 class AnimesController < ApplicationController
 
 	def index
 	end
-
 
 	def search
 		@anime = Anime.new
@@ -51,22 +53,15 @@ class AnimesController < ApplicationController
 
 	def random
 		@anime = Anime.discover
-    @anime.genres.each do |genre| 
-      if genre.name == "Hentai"
-        random
-      end
-    end
     @video_ids = get_youtube_ids(@anime)
-
 		render "show"
 	end
 
 	def show
-		
+	
 	end
 
   def get_anime_by_db(search_input)
-    binding.pry
     @anime = Anime.find_by_slug(search_input)
   end
 
@@ -80,7 +75,9 @@ class AnimesController < ApplicationController
   end
 
   def animes_in_genre
-    @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    @genre = params["genre"]
+    @animes_in_genre_array = Genre.find_by('name' => params['genre']).animes
+    @animes_in_genre_array = @animes_in_genre_array.paginate(:page => params[:page], :per_page => 100)
     @message = "No animes in this genre."
     render "animes_in_genre"
   end
@@ -105,16 +102,19 @@ class AnimesController < ApplicationController
     redirect_to "/watchlist"
   end
 
-
-
   def get_youtube_ids(anime)
-        @video_ids = []
-      list = YoutubeSearch.search("anime #{anime.title}")
-      list[0..5].each do |listing|
-        @video_ids << listing['video_id']
-      end
-      return @video_ids
+    @video_ids = []
+    list = YoutubeSearch.search("anime #{anime.title}")
+    list[0..5].each do |listing|
+      @video_ids << listing['video_id']
+    end
+    return @video_ids
+  end
+
+  def top_animes
+    @animes = Anime.order(score: :desc).limit(100)
+
+
   end
     
-
 end

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'youtube_search'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -45,7 +47,7 @@ group :development, :test do
 end
 
 group :test, :development do
-  gem 'youtube_search'
+  # gem 'youtube_search'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'

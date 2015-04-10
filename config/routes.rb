@@ -11,6 +11,7 @@ Rails.application.routes.draw do
    get '/add_to_watch_list/:save_this_anime' => 'animes#add_to_watch_list'
    get '/random' => 'animes#random'
    get '/watchlist' => 'animes#watchlist'
+   get '/top-animes' => 'animes#top_animes'
 
    #Deleting an anime from the watchlist
    post '/watchlist' => 'animes#destroy'

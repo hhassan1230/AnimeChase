@@ -28,6 +28,14 @@
  */
 
 
+
+body {
+  background-image: image-url('backimg3.jpg'); // link to /assets/images/texture.png
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
