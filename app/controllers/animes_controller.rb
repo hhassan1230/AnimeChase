@@ -31,13 +31,6 @@ class AnimesController < ApplicationController
 
 	def random
 		@anime = Anime.discover
-    @anime.genres.each do |genre| 
-      if genre.name == "Hentai"
-        random
-      end
-    end
-    @video_ids = get_youtube_ids(@anime)
-
     @video_ids = get_youtube_ids(@anime)
 		render "show"
 	end
@@ -65,6 +58,9 @@ class AnimesController < ApplicationController
     # @f = Genre.find_by('name' => params['genre'])
     # @f.order(:created_at).page(params[:page])
     # @genres = Genre.order(:created_at).page(params[:page]).per(2)
+    # a = Kaminari.paginate_array(Genre.find_by('name' => params['genre']).animes
+    # @genrse = a.order(:name).page(params[:page])
+    # @paginatable_array = Kaminari.paginate_array([], total_count: 145).page(params[:page]).per(10)
     @genre = params["genre"]
     @message = "No animes in this genre."
     render "animes_in_genre"
