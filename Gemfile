@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'kaminari'
-gem "activeadmin", git: "https://github.com/gregbell/active_admin"
+gem 'will_paginate'
+gem 'youtube_search'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'unirest'
@@ -45,7 +45,7 @@ group :development, :test do
 end
 
 group :test, :development do
-  gem 'youtube_search'
+  # gem 'youtube_search'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver'

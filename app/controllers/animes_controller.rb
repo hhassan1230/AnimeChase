@@ -1,5 +1,8 @@
 require 'uri'
 
+#TODO:
+#Rating SCORE IS NOT ROUNDING TO TWO DECIMAL PLACES!!!!
+
 class AnimesController < ApplicationController
 
 	def index
@@ -50,18 +53,9 @@ class AnimesController < ApplicationController
 
   def animes_in_genre
     @animes_in_genre = Genre.find_by('name' => params['genre']).animes
-    # @animes_in_genre.order("genre").page(params[:page])
-    # @animes_in_genre.page(params[:page]).order("genre")
-    # @animes_in_genre.order("name").page(params[:page])
-
-    # Kaminari.paginate_array(@animes_in_genre).page(params[:page]).per(10)
-    # @f = Genre.find_by('name' => params['genre'])
-    # @f.order(:created_at).page(params[:page])
-    # @genres = Genre.order(:created_at).page(params[:page]).per(2)
-    # a = Kaminari.paginate_array(Genre.find_by('name' => params['genre']).animes
-    # @genrse = a.order(:name).page(params[:page])
-    # @paginatable_array = Kaminari.paginate_array([], total_count: 145).page(params[:page]).per(10)
     @genre = params["genre"]
+    @animes_in_genre_array = Genre.find_by('name' => params['genre']).animes
+    @animes_in_genre_array = @animes_in_genre_array.paginate(:page => params[:page], :per_page => 10)
     @message = "No animes in this genre."
     render "animes_in_genre"
   end

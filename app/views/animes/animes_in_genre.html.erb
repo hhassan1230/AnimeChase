@@ -13,15 +13,13 @@
 
 <%= @genre if !@animes_in_genre.empty? %>
 <%= @message if @animes_in_genre.empty? %>
-<% @animes_in_genre.each do |anime| %>
-<div class='animelist'>
+<%= @message if @animes_in_genre_array.empty? %>
+<% @animes_in_genre_array.each do |anime| %>
+  <div class='animelist'>
   <img src="<%= anime.img_url %>" height="250" ></br>
   <%= link_to anime.title, "/anime/#{anime.slug}"  %></br></br>
   <%= anime.description %>
   </div>
-
 <% end %>
 
-
-
-
+<%= will_paginate @animes_in_genre_array %>
