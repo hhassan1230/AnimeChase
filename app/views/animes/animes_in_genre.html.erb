@@ -10,8 +10,10 @@
 </br></br>
 
 
+  <div class='animelist'>
+    <h3><%= @genre if @animes_in_genre_array %></h3>
+</div>
 
-<%= @genre if !@animes_in_genre_array.empty? %>
 <%= @message if @animes_in_genre_array.empty? %>
 <% @animes_in_genre_array.each do |anime| %>
   <div class='animelist'>
