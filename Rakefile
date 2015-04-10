@@ -23,10 +23,18 @@ namespace :seed do
       if response.headers[:status] == "200 OK"
         anime = Anime.create
         anime.title = response.body["title"]
-        anime.slug = response.body['slug']
         anime.description = response.body["synopsis"]
         anime.score = response.body["community_rating"]
         anime.img_url = response.body["cover_image"]
+        anime.show_type = response.body["show_type"]
+        anime.starting_date = response.body["started_airing"]
+        anime.end_date = response.body["finished_airing"]
+        anime.eps_length = response.body["episode_length"]
+        anime.eps_count = response.body["episode_count"]
+        anime.show_status = response.body["status"]
+        anime.age_rating = response.body["age_rating"]
+        anime.humm_id = response.body["id"]
+        anime.slug = response.body['slug']
         anime.save
         response.body['genres'].each do |genre|
           genre_anime = GenreAnime.new

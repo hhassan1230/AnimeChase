@@ -13,27 +13,40 @@ class AnimesController < ApplicationController
 	def create
     search_string = (params["anime"]["title"] || params["anime"])
   	@search_input = search_string.gsub(" ", "-").downcase
-    get_anime(@search_input)
 
-	  if @response.headers[:status] == "200 OK"
-			@anime = Anime.create(title: @response.body["title"], 
-				description: @response.body["synopsis"], 
-				score: @response.body["community_rating"],
-				img_url: @response.body["cover_image"])
-
+    @anime = get_anime_by_db(@search_input)
+    
+    if @anime    
       @video_ids = get_youtube_ids(@anime)
-      
-
-
-
-			  render "show"
+      render "show"
     else
-    @anime = Anime.new
-    @error = "No results found for \"#{params["anime"]["title"]}\"."
-    render "search"
+      get_anime(@search_input)
 
-	  end
+      if @response.headers[:status] == "200 OK"
+        @anime = Anime.create(title: @response.body["title"], 
+          description: @response.body["synopsis"], 
+          score: @response.body["community_rating"],
+          img_url: @response.body["cover_image"],
+          show_type: @response.body["show_type"],
+          starting_date: @response.body["started_airing"],
+          end_date: @response.body["finished_airing"],
+          eps_length: @response.body["episode_length"],
+          eps_count: @response.body["episode_count"],
+          show_status: @response.body["status"],
+          age_rating:  @response.body["age_rating"],
+          humm_id: @response.body["id"],
+          slug: @response.body["slug"])
 
+        @video_ids = get_youtube_ids(@anime)
+
+        render "show"
+      else
+        @anime = Anime.new
+        @error = "No results found for \"#{params["anime"]["title"]}\"."
+
+        render "search"
+  	  end
+    end
 	end
 
 	def random
@@ -51,6 +64,11 @@ class AnimesController < ApplicationController
 	def show
 		
 	end
+
+  def get_anime_by_db(search_input)
+    binding.pry
+    @anime = Anime.find_by_slug(search_input)
+  end
 
 
   def get_anime(search_input)
