@@ -1,5 +1,8 @@
 require 'uri'
 
+#TODO:
+#Rating SCORE IS NOT ROUNDING TO TWO DECIMAL PLACES!!!!
+
 class AnimesController < ApplicationController
 
 	def index
@@ -56,7 +59,9 @@ class AnimesController < ApplicationController
   end
 
   def animes_in_genre
-    @animes_in_genre = Genre.find_by('name' => params['genre']).animes
+    @animes_in_genre_array = Genre.find_by('name' => params['genre']).animes
+    #SIMPLY WOW
+    @animes_in_genre_array = @animes_in_genre_array.paginate(:page => params[:page], :per_page => 10)
     @message = "No animes in this genre."
     render "animes_in_genre"
   end
