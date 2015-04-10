@@ -56,11 +56,10 @@
   <% else %>
       
       <ul class="nav navbar-nav navbar-right">
-   
-     
 
-<li>        <%= link_to "Log in with Facebook", "/auth/facebook"%></li>
-
+<li>        <%= link_to "/auth/facebook" do %>
+                Login with <%= fa_icon 'facebook-official' %>
+            <% end %></li>
 
         </li>
       </ul>
