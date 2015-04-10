@@ -52,10 +52,9 @@ class AnimesController < ApplicationController
   end
 
   def animes_in_genre
-    @animes_in_genre = Genre.find_by('name' => params['genre']).animes
     @genre = params["genre"]
     @animes_in_genre_array = Genre.find_by('name' => params['genre']).animes
-    @animes_in_genre_array = @animes_in_genre_array.paginate(:page => params[:page], :per_page => 10)
+    @animes_in_genre_array = @animes_in_genre_array.paginate(:page => params[:page], :per_page => 100)
     @message = "No animes in this genre."
     render "animes_in_genre"
   end

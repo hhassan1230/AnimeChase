@@ -11,8 +11,7 @@
 
 
 
-<%= @genre if !@animes_in_genre.empty? %>
-<%= @message if @animes_in_genre.empty? %>
+<%= @genre if !@animes_in_genre_array.empty? %>
 <%= @message if @animes_in_genre_array.empty? %>
 <% @animes_in_genre_array.each do |anime| %>
   <div class='animelist'>
