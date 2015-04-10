@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'youtube_search'
 gem 'omniauth'
 gem 'omniauth-facebook'

@@ -20,5 +20,7 @@
   <%= anime.description %>
   </div>
 <% end %>
+  <div class='animelist'>
 
-<%= will_paginate @animes_in_genre_array %>
+<%= will_paginate @animes_in_genre_array, renderer: BootstrapPagination::Rails %>
+  </div>
