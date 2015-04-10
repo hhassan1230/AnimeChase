@@ -87,5 +87,11 @@ class AnimesController < ApplicationController
     end
     return @video_ids
   end
+
+  def top_animes
+    @animes = Anime.order(score: :desc).limit(100)
+
+
+  end
     
 end

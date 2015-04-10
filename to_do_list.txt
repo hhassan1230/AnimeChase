@@ -13,6 +13,12 @@ nav-bar: sign in and sign out. when signed in, first name and pic is displayed.
 random button functional
 link anime videos to anime show page
 put genres into columns on index page
+pagination
+
+
+todo
+---
+background - opacity
 
 core features:
 ---
