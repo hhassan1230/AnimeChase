@@ -122,10 +122,13 @@ class AnimesController < ApplicationController
   end
 
   def date_find
-    this_year = Date.today.year
     # binding.pry
-    # @anime_array = Anime.find_date_array
-    search
+    @anime_array = Anime.find_date_array
+    binding.pry
+    @animes = @anime_array.order(starting_date: :desc).limit(100)
+    # binding.pry
+    render :top_animes
+    # search
   end
     
 end
