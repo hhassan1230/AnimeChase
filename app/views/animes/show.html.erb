@@ -21,6 +21,7 @@
 
 <h4>Community Score: &nbsp; <%= "#{@anime.score.round(2)} out of 5" %></h4>
 
+
 <h4>Genre:  &nbsp;
 <% if @response %>
 		<% @response.body["genres"].each do |genre| %>

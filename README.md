@@ -14,6 +14,7 @@ able to find animes by:
 
 Add some spiffy screenshots of your app here.
 
+
 ## Background
 
 We wanted to make this app because:
@@ -53,9 +54,9 @@ Features we are currently working on:
 
 ## Author
 
-Hessvacio Hassan: https://www.linkedin.com/pub/hessvacio-hassan/5b/88/714, https://hhassan2015.wordpress.com/
-Ming Zhang: https://www.linkedin.com/pub/ming-zhang/89/aa5/452, http://flounderingincode.com/
-Eric Orellana: https://www.linkedin.com/in/eorellana, 
+Hessvacio Hassan: https://www.linkedin.com/pub/hessvacio-hassan/5b/88/714, Blog: https://hhassan2015.wordpress.com/
+Ming Zhang: https://www.linkedin.com/pub/ming-zhang/89/aa5/452, Blog: http://flounderingincode.com/
+Eric Orellana: https://www.linkedin.com/in/eorellana, Blog: https://eorellana01.wordpress.com/
 
 ## License
 
