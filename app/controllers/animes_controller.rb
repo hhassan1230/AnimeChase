@@ -55,7 +55,7 @@ class AnimesController < ApplicationController
 		@anime = Anime.discover
 
     @anime.genres.each do |genre|
-      if genre.name == "Hentai"
+      if genre.name == "Hentai" || genre.name == "Yuri" || genre.name == "Yaoi"
         random
       end
     end
