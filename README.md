@@ -2,7 +2,13 @@
 
 ## Description
 
-Add a short description of your app.
+A anime search Rails Application that will be 
+able to find animes by:
+1. Titles
+2. Genres
+3. Most Recent Release
+4. Top Animes
+5. Randomly 
 
 ## Screenshots
 
@@ -10,12 +16,21 @@ Add some spiffy screenshots of your app here.
 
 ## Background
 
-Why did you want to make this app? What was your development process
-like?
+We wanted to make this app because:
+- We had No idea what Anime to watch.
+- We had No idea about what new Anime coming out.
+- We Wanted to Find new Amazing Animes by themes and genres
 
 ## Features
 
-Bullet point some of the key features of your app here.
+Find Animes by
+1. Titles
+2. Genres
+3. Most Recent Release
+4. Top Animes
+5. Randomly
+
+And the page anime with show stats on the anime with the ablity to save the title to a anime watch list linked to your facebook account.
 
 ## Usage
 
@@ -27,17 +42,20 @@ rake seed:populate_db
 
 ## Development/Contribution
 
-Explain how people can contribute to your app. How should they write tests?
-Any things in particular you'd like to see in pull requests?
+We are still looking for a api that would be able to find full free episodes for most amine titles in the world. If it has a gem that would be amazing!!!!
 
 ## Future
 
-What features are you currently working on? Only mention things that you
-actually are implementing. No pie-in-the-sky-never-gonna-happen stuff.
+Features we are currently working on: 
+- Open the app up to search Manga (Japanese comics)
+- Find a way to link full episodes of a series in the show page
+- Randomize background pics
 
 ## Author
 
-Link to your blog, twitter, etc!
+Hessvacio Hassan: https://www.linkedin.com/pub/hessvacio-hassan/5b/88/714, https://hhassan2015.wordpress.com/
+Ming Zhang: https://www.linkedin.com/pub/ming-zhang/89/aa5/452, http://flounderingincode.com/
+Eric Orellana: https://www.linkedin.com/in/eorellana, 
 
 ## License
 
