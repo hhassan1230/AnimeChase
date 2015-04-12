@@ -12,7 +12,7 @@ Rails.application.routes.draw do
    get '/random' => 'animes#random'
    get '/watchlist' => 'animes#watchlist'
    get '/top-animes' => 'animes#top_animes'
-
+   get '/date' => 'animes#date_find'
    #Deleting an anime from the watchlist
    post '/watchlist' => 'animes#destroy'
 

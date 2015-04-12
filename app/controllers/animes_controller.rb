@@ -53,6 +53,12 @@ class AnimesController < ApplicationController
 
 	def random
 		@anime = Anime.discover
+
+    @anime.genres.each do |genre|
+      if genre.name == "Hentai"
+        random
+      end
+    end
     @video_ids = get_youtube_ids(@anime)
 		render "show"
 	end
@@ -113,8 +119,13 @@ class AnimesController < ApplicationController
 
   def top_animes
     @animes = Anime.order(score: :desc).limit(100)
+  end
 
-
+  def date_find
+    this_year = Date.today.year
+    # binding.pry
+    # @anime_array = Anime.find_date_array
+    search
   end
     
 end

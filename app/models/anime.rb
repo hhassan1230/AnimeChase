@@ -8,5 +8,10 @@ class Anime < ActiveRecord::Base
 	def self.discover
     self.all.sample
 	end
+
+	def self.find_date_array
+		# binding.pry
+		# a = self.where(starting_date: last_year..next_year)
+	end
 	
 end
