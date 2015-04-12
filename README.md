@@ -55,7 +55,9 @@ Features we are currently working on:
 ## Author
 
 Hessvacio Hassan: https://www.linkedin.com/pub/hessvacio-hassan/5b/88/714, Blog: https://hhassan2015.wordpress.com/
+
 Ming Zhang: https://www.linkedin.com/pub/ming-zhang/89/aa5/452, Blog: http://flounderingincode.com/
+
 Eric Orellana: https://www.linkedin.com/in/eorellana, Blog: https://eorellana01.wordpress.com/
 
 ## License
