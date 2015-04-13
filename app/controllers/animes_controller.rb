@@ -124,7 +124,7 @@ class AnimesController < ApplicationController
   def date_find
     # binding.pry
     @anime_array = Anime.find_date_array
-    binding.pry
+    # binding.pry
     @animes = @anime_array.order(starting_date: :desc).limit(100)
     # binding.pry
     render :top_animes
