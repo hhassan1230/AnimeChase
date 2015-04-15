@@ -17,7 +17,7 @@ namespace :seed do
   end
 
   task :populate_db => :environment do
-    (1..11_000).each do |i|
+    (1..2000).each do |i|
       response = get_anime(i)
 
       if response.headers[:status] == "200 OK"
