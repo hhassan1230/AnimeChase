@@ -19,8 +19,8 @@
 <h6><%= @anime.description %></h6>
 
 
-<h4>Community Score: &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; 
-Anime Status: &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; Start Date: &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <%= @anime.show_status %>
+<h4>Community Score: &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; </h4>
+<h4>Anime Status: &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; Start Date: &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <%= @anime.show_status %>
 <% if @anime.end_date %>
   :
 <% else %>
