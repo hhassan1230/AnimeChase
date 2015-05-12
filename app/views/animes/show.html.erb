@@ -20,7 +20,13 @@
 
 
 <h4>Community Score: &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; 
-Anime Status: &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; Start Date: <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <%= @anime.show_status %>, &nbsp; <%= "#{@anime.end_date.strftime('%B %Y')}," if @anime.end_date %> &nbsp; <%= "#{@anime.eps_count} episodes." if @anime.eps_count && @anime.eps_count > "1" %> &nbsp; <%= "#{@anime.eps_length} minutes." if @anime.show_type != "TV" %>
+Anime Status: &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; Start Date: &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <%= @anime.show_status %>
+<% if @anime.end_date %>
+  :
+<% else %>
+  ,
+<% end %>
+&nbsp; <%= "#{@anime.end_date.strftime('%B %Y')}," if @anime.end_date %> &nbsp; <%= "#{@anime.eps_count} episodes." if @anime.eps_count && @anime.eps_count > "1" %> &nbsp; <%= "#{@anime.eps_length} minutes." if @anime.show_type != "TV" %>
 </h4>
 
 
