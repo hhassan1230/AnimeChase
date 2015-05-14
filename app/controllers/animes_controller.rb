@@ -92,7 +92,6 @@ class AnimesController < ApplicationController
   def add_to_watch_list
     @anime = Anime.find_by(:title => params['save_this_anime'])
     SavedAnime.create(:anime_id => @anime.id, :user_id => current_user.id)
-    # get_anime(@anime.slug)
     @video_ids = get_youtube_ids(@anime)
     render :show
   end
@@ -111,9 +110,11 @@ class AnimesController < ApplicationController
 
   def get_youtube_ids(anime)
     @video_ids = []
-    list = YoutubeSearch.search("anime #{anime.title}")
+
+    list = YoutubeLoad.new.search("#{anime.title}")
     list[0..5].each do |listing|
-      @video_ids << listing['video_id']
+
+        @video_ids << listing
     end
     return @video_ids
   end

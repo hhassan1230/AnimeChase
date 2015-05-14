@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'google-api-client'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'youtube_search'
