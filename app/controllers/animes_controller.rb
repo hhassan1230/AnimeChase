@@ -110,12 +110,8 @@ class AnimesController < ApplicationController
 
   def get_youtube_ids(anime)
     @video_ids = []
-
     list = YoutubeLoad.new.search("#{anime.title}")
-    list[0..5].each do |listing|
-
-        @video_ids << listing
-    end
+    @video_ids = list
     return @video_ids
   end
 
