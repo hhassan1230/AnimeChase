@@ -6,7 +6,7 @@
 
 <% @animes.each do |anime| %>
   <div class='animelist'>
-    <img src="<%= anime.img_url %>" height="250" ></br>
+    <a href="/anime/<%= anime.slug %>"><img src="<%= anime.img_url %>" height="250" ></a></br>
     <%= link_to anime.title, "/anime/#{anime.slug}"  %></br>
       Score: <%= anime.score.round(2) %> 
 </br></br>
