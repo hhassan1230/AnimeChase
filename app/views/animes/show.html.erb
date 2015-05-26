@@ -7,20 +7,20 @@
 
 <% if current_user %>
   <% if !(current_user.animes.include? Anime.find_by(:title => @anime.title)) %>
-    <%= link_to 'Add to Watch List', "/add_to_watch_list/#{@anime.title}" %>
+    <%= button_to 'Add to Watch List', "/add_to_watch_list/#{@anime.title}", :method => :get%>
   <% else %>
     <%= "Already in your Watch List" %>
   <% end %>
 <% else %>
-   <%= link_to "Login to add to Watch List", "/auth/facebook"%>
+   <%= button_to "Login to add to Watch List", "/auth/facebook", :method => :get%>
  <% end %>
 
-<h4>Description:</h4>
-<h6><%= @anime.description %></h6>
+<h4><b>Description:</b></h4>
+<h4><%= @anime.description %></h4>
 
 
-<h4>Community Score: &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; </h4>
-<h4>Anime Status: &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; Start Date: &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <%= @anime.show_status %>
+<h4><b>Community Score:</b> &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; </h4>
+<h4><b>Anime Status:</b> &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; <b>Start Date:</b> &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <b><%= @anime.show_status %></b>
 <% if @anime.end_date %>
   :
 <% else %>
@@ -30,7 +30,7 @@
 </h4>
 
 
-<h4>Genre:  &nbsp;
+<h4><b>Genre:</b>  &nbsp;
 <% if @response %>
 		<% @response.body["genres"].each do |genre| %>
   	<% genre = Genre.all.find_by(:name => genre['name']) %>

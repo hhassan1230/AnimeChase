@@ -1,8 +1,5 @@
 require 'uri'
 
-#TODO:
-#Rating SCORE IS NOT ROUNDING TO TWO DECIMAL PLACES!!!!
-
 class AnimesController < ApplicationController
 
 	def index
