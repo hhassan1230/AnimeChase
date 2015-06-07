@@ -50,13 +50,6 @@ class AnimesController < ApplicationController
 
 	def random
 		@anime = Anime.discover
-
-    @anime.genres.each do |genre|
-      if genre.name == "Hentai" || genre.name == "Yuri" || genre.name == "Yaoi"
-        @anime = nil
-        random
-      end
-    end
     @video_ids = get_youtube_ids(@anime)
 		render "show"
 	end

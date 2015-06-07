@@ -4,9 +4,16 @@ class Anime < ActiveRecord::Base
   
   has_many :saved_animes
   has_many :users, through: :saved_animes
+
+  UNSAFE_GENRES = ["Hentai", "Yuri", "Yaoi"]
   
 	def self.discover
-    self.all.sample
+    anime = self.all.sample
+    while unsafe_genre?(anime)
+    	anime = self.all.sample
+    end
+	  anime
+    
 	end
 
 	def self.find_date_array
@@ -17,12 +24,12 @@ class Anime < ActiveRecord::Base
 		self.where(starting_date: last_year..next_year)
 	end
 
-	def filter(anime)
-		@anime.genres.each do |genre|
-      if genre.name == "Hentai" || genre.name == "Yuri" || genre.name == "Yaoi"
-        
-      end
-    end	
+	def self.unsafe_genre?(anime)
+		anime.genres.any? {|genre| UNSAFE_GENRES.include?(genre.name) } 
+	end
+
+	def unsafe_genres
+		UNSAFE_GENRES
 	end
 	
 end

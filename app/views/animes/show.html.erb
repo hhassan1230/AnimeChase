@@ -20,13 +20,13 @@
 
 
 <h4><b>Community Score:</b> &nbsp; <%= "#{@anime.score.round(2)} out of 5" %> &nbsp; &nbsp; </h4>
-<h4><b>Anime Status:</b> &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; <b>Start Date:</b> &nbsp; <%= @anime.starting_date.strftime('%B %Y') %>, &nbsp; &nbsp; <b><%= @anime.show_status %></b>
+<h4><b>Anime Status:</b> &nbsp; <%= @anime.show_type %>, &nbsp; &nbsp; <b>Start Date:</b> &nbsp; <%= @anime.starting_date.try(:strftime, '%B %Y')%>, &nbsp; &nbsp; <b><%= @anime.show_status %></b>
 <% if @anime.end_date %>
   :
 <% else %>
   ,
 <% end %>
-&nbsp; <%= "#{@anime.end_date.strftime('%B %Y')}," if @anime.end_date %> &nbsp; <%= "#{@anime.eps_count} episodes." if @anime.eps_count && @anime.eps_count > "1" %> &nbsp; <%= "#{@anime.eps_length} minutes." if @anime.show_type != "TV" %>
+&nbsp; <%= "#{@anime.end_date.try(:strftime, '%B %Y')}," if @anime.end_date %> &nbsp; <%= "#{@anime.eps_count} episodes." if @anime.eps_count && @anime.eps_count > "1" %> &nbsp; <%= "#{@anime.eps_length} minutes." if @anime.show_type != "TV" %>
 </h4>
 
 
