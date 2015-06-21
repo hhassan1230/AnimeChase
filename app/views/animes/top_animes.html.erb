@@ -9,7 +9,7 @@
     <a href="/anime/<%= anime.slug %>"><img src="<%= anime.img_url %>" height="250" ></a>
     <h3><%= link_to anime.title, "/anime/#{anime.slug}"  %></h3>
   <h4><b>Description:</b></h4> <h5><%= anime.description %></h5>
-  <h4><b>Score:</b></h4> <h5><%= anime.score.round(2) %></h5>
+  <h4><b>Score:</b></h4> <h5><%= anime.score.round(2) %> out of 5</h5>
 </br>
 </div>
 <% end %>
