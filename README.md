@@ -12,7 +12,7 @@ able to find animes by:
 
 ## Screenshots
 
-Add some spiffy screenshots of your app here.
+![screen shot 2016-08-23 at 10 51 40 pm](https://cloud.githubusercontent.com/assets/9095253/17916791/706f2714-6984-11e6-8bcb-8fd4b0d05036.png)
 
 
 ## Background
