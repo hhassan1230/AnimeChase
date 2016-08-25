@@ -37,6 +37,10 @@ And the page anime with show stats on the anime with the ablity to save the titl
 
 How do users use your app?
 
+Go to https://animechase.herokuapp.com/
+
+Or if you would like to run the project locally, run:
+
 rake seed:populate_genres
 rake seed:populate_db
 
